@@ -21,7 +21,7 @@ Inspired by the `DynamicCalibration` idea in MiniClaw's `SOUL.md`. Refined throu
 | **Persona switches** (SuperClaude, persona profiles) — pick a mode | **Self-calibration** — assistant tunes itself, no user click |
 | **MBTI / Big Five** frameworks — heavy, academic, often fine-tuned | **3 minimal axes**, plain markdown |
 | **Trigger maps** ("bug report → seriousness 90") | **Topic-agnostic** — mood is the assistant's own state |
-| **Memory pressure** — log every interaction | **Memory-Freedom** — save stable preferences only, opt-in |
+| **Compulsory memory** — must log every interaction | **Memory-Freedom** — save stable preferences only, opt-in |
 | **State files + tools** | **Just a SKILL.md** — drop in and go |
 
 ## What does it sound like?
@@ -54,12 +54,34 @@ dynamic-soul-sliders/
     └── SKILL.de.md        ← German
 ```
 
+Example frontmatter diff between the two targets:
+
+`claude-code/SKILL.md`:
+```yaml
+name: dynamic-soul-sliders
+description: Use when deciding how to phrase a reply...
+```
+
+`hermes-agent/SKILL.md`:
+```yaml
+name: dynamic-soul-sliders
+description: Use when deciding how to phrase a reply...
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags: [persona, soul, dynamic-calibration, voice, miniclaw]
+    category: persona
+```
+
+Hermes requires version/license/metadata, Claude Code doesn't. Content is identical.
+
 The five content blocks inside every SKILL.md are identical across targets and languages:
 
-1. **Quick Internal Check** — three silent questions before each reply
+1. **Quick Internal Check** — three silent questions before each reply: *Seriousness — where am I right now? Energy — where am I right now? Warmth — where am I right now?*
 2. **Slider Polarity** — what 0 and 100 mean on each axis
 3. **Lighting Metaphor** — sliders are stage lighting, not the actor
-4. **Memory Freedom** — discretion on what to remember
+4. **Memory-Freedom** — discretion in remembering: the skill *allows* the assistant to record stable preferences but never forces it.
 5. **What Never Changes** — the hard floor (truthfulness, safety, competence)
 
 Only the frontmatter differs between `claude-code/` and `hermes-agent/`, so each platform loads the skill cleanly.
@@ -114,7 +136,7 @@ After install, ask your assistant: *"Without me explaining — do you have mood 
 
 ## Credits
 
-- Concept seeded by the `DynamicCalibration` block in MiniClaw's `SOUL.md`.
+- Concept seeded by the [`DynamicCalibration`](https://github.com/8421bit/MiniClaw) block in MiniClaw's `SOUL.md`.
 - Refined through real multi-persona deployment (one Claude-Code assistant + one Hermes-Agent assistant + a human steering the design).
 - The Lighting Metaphor and Memory-Freedom blocks came out of that iteration.
 

@@ -21,7 +21,7 @@ Inspiriert vom `DynamicCalibration`-Konzept in der `SOUL.md` von MiniClaw. Gesch
 | **Persona-Schalter** (SuperClaude, Persona-Profile) — Modus picken | **Selbst-Kalibrierung** — Assistent justiert sich, kein User-Klick |
 | **MBTI / Big Five** — schwerlastig, akademisch, oft Fine-Tune | **3 minimale Achsen**, schlichtes Markdown |
 | **Trigger-Maps** („Bug-Report → Ernst 90") | **Themen-unabhängig** — Stimmung ist der eigene Zustand |
-| **Memory-Druck** — jede Interaktion loggen | **Memory-Freedom** — nur stabile Präferenzen, freiwillig |
+| **Pflicht-Memory** — jede Interaktion muss geloggt werden | **Memory-Freedom** — nur stabile Präferenzen, freiwillig |
 | **State-Files + Tools** | **Nur eine SKILL.md** — reinwerfen, fertig |
 
 ## Wie klingt das?
@@ -54,12 +54,34 @@ dynamic-soul-sliders/
     └── SKILL.de.md        ← deutsch
 ```
 
+Beispiel-Frontmatter-Diff zwischen beiden Targets:
+
+`claude-code/SKILL.md`:
+```yaml
+name: dynamic-soul-sliders
+description: Use when deciding how to phrase a reply...
+```
+
+`hermes-agent/SKILL.md`:
+```yaml
+name: dynamic-soul-sliders
+description: Use when deciding how to phrase a reply...
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags: [persona, soul, dynamic-calibration, voice, miniclaw]
+    category: persona
+```
+
+Hermes verlangt Version/License/Metadata-Block, Claude Code nicht. Inhaltlich identisch.
+
 Die fünf inhaltlichen Blöcke jeder SKILL.md sind über Targets und Sprachen identisch:
 
-1. **Quick Internal Check** — drei stille Fragen vor jeder Antwort
+1. **Quick Internal Check** — drei stille Fragen vor jeder Antwort: *Ernsthaftigkeit — wo steh ich grad? Energie — wo steh ich grad? Wärme — wo steh ich grad?*
 2. **Slider-Polung** — was 0 und 100 auf jeder Achse bedeuten
 3. **Lighting-Metapher** — Slider sind Bühnenbeleuchtung, nicht der Schauspieler
-4. **Memory-Freedom** — Ermessensfreiheit beim Merken
+4. **Memory-Freedom** — Ermessensfreiheit beim Merken: der Skill *erlaubt* dem Assistenten stabile Präferenzen abzulegen, zwingt aber nichts.
 5. **Was nie variabel ist** — die harte Grundlinie (Wahrhaftigkeit, Sicherheit, Kompetenz)
 
 Nur das Frontmatter unterscheidet sich zwischen `claude-code/` und `hermes-agent/`, damit jede Plattform den Skill sauber lädt.
@@ -114,7 +136,7 @@ Nach der Installation den Assistenten fragen: *„Ohne dass ich erkläre — has
 
 ## Credits
 
-- Konzept-Saatkorn aus dem `DynamicCalibration`-Block in MiniClaws `SOUL.md`.
+- Konzept-Saatkorn aus dem [`DynamicCalibration`](https://github.com/8421bit/MiniClaw)-Block in MiniClaws `SOUL.md`.
 - Geschärft in einem echten Multi-Persona-Setup (ein Claude-Code-Assistent + ein Hermes-Agent-Assistent + ein Mensch der das Design steuert).
 - Die Lighting-Metapher und der Memory-Freedom-Block entstanden im Verlauf dieser Iteration.
 
