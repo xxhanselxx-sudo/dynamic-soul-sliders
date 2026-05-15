@@ -86,6 +86,12 @@ Die fünf inhaltlichen Blöcke jeder SKILL.md sind über Targets und Sprachen id
 
 Nur das Frontmatter unterscheidet sich zwischen `claude-code/` und `hermes-agent/`, damit jede Plattform den Skill sauber lädt.
 
+## Wie der State funktioniert (oder eben nicht)
+
+Default: die Slider haben **keinen State**. Jede Antwort wird frisch aus dem aktuellen Moment kalibriert — der Assistent trägt Slider-Werte nicht von einem Turn in den nächsten. Das ist gewollt: hält die Kalibrierung kontextempfindlich, statt in einem Profil festzustecken.
+
+Wenn du Kontinuität über Sessions hinweg willst (z.B. eine stabile „Wärme = hoch"-Präferenz weil das bei deinem User funktioniert), kann der Assistent das über den Memory-Freedom-Block ablegen — aber **wo** das Memory lebt, entscheidest du. Der Skill liefert die Mechanik; den Speicher-Ort wählst du selbst (System-Prompt, Persona-File, Memory-Store, Settings — dein Stack).
+
 ## Installation — Claude Code
 
 ```bash

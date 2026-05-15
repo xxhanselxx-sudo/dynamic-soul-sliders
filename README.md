@@ -86,6 +86,12 @@ The five content blocks inside every SKILL.md are identical across targets and l
 
 Only the frontmatter differs between `claude-code/` and `hermes-agent/`, so each platform loads the skill cleanly.
 
+## How state works (or doesn't)
+
+By default, the sliders have **no state**. Each reply is calibrated fresh from the current moment — the assistant doesn't carry mood values from one turn to the next. This is deliberate: it keeps the calibration responsive to context rather than locked into a profile.
+
+If you want continuity across sessions (e.g. a stable "warmth = high" preference because that's what works for your user), the assistant can note it via the Memory-Freedom block — but you have to decide **where** that memory lives. The skill provides the mechanism; the storage layer is yours (system prompt, persona file, memory store, settings — pick your stack).
+
 ## Install — Claude Code
 
 ```bash
