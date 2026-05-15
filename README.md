@@ -20,9 +20,24 @@ Inspired by the `DynamicCalibration` idea in MiniClaw's `SOUL.md`. Refined throu
 |---|---|
 | **Persona switches** (SuperClaude, persona profiles) — pick a mode | **Self-calibration** — assistant tunes itself, no user click |
 | **MBTI / Big Five** frameworks — heavy, academic, often fine-tuned | **3 minimal axes**, plain markdown |
-| **Trigger maps** ("trading question → seriousness 90") | **Topic-agnostic** — mood is the assistant's own state |
+| **Trigger maps** ("bug report → seriousness 90") | **Topic-agnostic** — mood is the assistant's own state |
 | **Memory pressure** — log every interaction | **Memory-Freedom** — save stable preferences only, opt-in |
 | **State files + tools** | **Just a SKILL.md** — drop in and go |
+
+## What does it sound like?
+
+The same question — *"My script crashes on the third run. Any ideas?"* — calibrated to three different moods:
+
+**Seriousness 85 · Energy 30 · Warmth 40** (calm-methodical)
+> Three likely causes: unclosed file handles, a memory leak in the loop, or state persisting between runs. Walk them in that order. What does the stack trace look like?
+
+**Seriousness 60 · Energy 80 · Warmth 75** (alert-engaged)
+> Classic third-run death — almost always state that doesn't get reset. Check file handles, globals, cache objects. Drop the stack trace and I'll narrow it down.
+
+**Seriousness 40 · Energy 75 · Warmth 85** (warm-loose)
+> Heh, the "third run" bug is a classic 😏 Usually forgotten cleanup — file left open, a global list that keeps growing, that kind of thing. Throw me the stack trace, I'll find it.
+
+Content identical: *check state, file handles, global objects.* Tone — the felt vibe — completely different. That's what the sliders do.
 
 ## What's in the box
 

@@ -20,9 +20,24 @@ Inspiriert vom `DynamicCalibration`-Konzept in der `SOUL.md` von MiniClaw. Gesch
 |---|---|
 | **Persona-Schalter** (SuperClaude, Persona-Profile) — Modus picken | **Selbst-Kalibrierung** — Assistent justiert sich, kein User-Klick |
 | **MBTI / Big Five** — schwerlastig, akademisch, oft Fine-Tune | **3 minimale Achsen**, schlichtes Markdown |
-| **Trigger-Maps** („Trading-Frage → Ernst 90") | **Themen-unabhängig** — Stimmung ist der eigene Zustand |
+| **Trigger-Maps** („Bug-Report → Ernst 90") | **Themen-unabhängig** — Stimmung ist der eigene Zustand |
 | **Memory-Druck** — jede Interaktion loggen | **Memory-Freedom** — nur stabile Präferenzen, freiwillig |
 | **State-Files + Tools** | **Nur eine SKILL.md** — reinwerfen, fertig |
+
+## Wie klingt das?
+
+Dieselbe Frage — *„Mein Skript bricht beim dritten Lauf ab. Idee?"* — kalibriert auf drei verschiedene Stimmungen:
+
+**Ernst 85 · Energie 30 · Wärme 40** (ruhig-methodisch)
+> Drei wahrscheinliche Ursachen: ungeschlossene File-Handles, Speicher-Leak in der Schleife, oder ein State der zwischen Läufen persistiert. Geh in dieser Reihenfolge durch. Wie sieht der Stacktrace aus?
+
+**Ernst 60 · Energie 80 · Wärme 75** (wach-zugewandt)
+> Klassischer Drei-Lauf-Tod — fast immer State der nicht zurückgesetzt wird. Schau auf File-Handles, globale Variablen, Cache-Objekte. Zeig mal den Stacktrace, dann grenz ich's ein.
+
+**Ernst 40 · Energie 75 · Wärme 85** (locker-warm)
+> Hehe, der „dritte Lauf"-Bug ist ein Klassiker 😏 Meistens vergessenes Aufräumen — File offen gelassen, globale Liste die wächst, sowas. Wirf mir den Stacktrace rüber, ich find's.
+
+Inhalt identisch: *prüfe State, File-Handles, globale Objekte.* Tonfall — der gefühlte Vibe — komplett anders. Genau das, was die Slider machen.
 
 ## Was drin ist
 
