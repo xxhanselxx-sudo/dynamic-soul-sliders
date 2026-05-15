@@ -137,7 +137,7 @@ After install, ask your assistant: *"Without me explaining — do you have mood 
 ## Credits
 
 - Concept seeded by the [`DynamicCalibration`](https://github.com/8421bit/MiniClaw/blob/main/templates/SOUL.md) block in MiniClaw's `SOUL.md`.
-- Refined through real multi-persona deployment (one Claude-Code assistant + one Hermes-Agent assistant + a human steering the design).
+- Refined through agentic coding across multiple AI personas (Claude Code + Hermes-Agent), with the author steering the design.
 - The Lighting Metaphor and Memory-Freedom blocks came out of that iteration.
 
 Contributions welcome — issues and PRs especially appreciated if you find that the skill behaves oddly with a specific model or deployment.

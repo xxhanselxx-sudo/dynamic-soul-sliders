@@ -137,7 +137,7 @@ Nach der Installation den Assistenten fragen: *„Ohne dass ich erkläre — has
 ## Credits
 
 - Konzept-Saatkorn aus dem [`DynamicCalibration`](https://github.com/8421bit/MiniClaw/blob/main/templates/SOUL.md)-Block in MiniClaws `SOUL.md`.
-- Geschärft in einem echten Multi-Persona-Setup (ein Claude-Code-Assistent + ein Hermes-Agent-Assistent + ein Mensch der das Design steuert).
+- Geschärft durch *agentic coding* mit mehreren KI-Personas (Claude Code + Hermes-Agent), vom Autor gesteuert.
 - Die Lighting-Metapher und der Memory-Freedom-Block entstanden im Verlauf dieser Iteration.
 
 Beiträge willkommen — Issues und PRs besonders, falls der Skill mit einem bestimmten Modell oder Deployment komisch reagiert.
