@@ -82,7 +82,7 @@ The five content blocks inside every SKILL.md are identical across targets and l
 2. **Slider Polarity** — what 0 and 100 mean on each axis
 3. **Lighting Metaphor** — sliders are stage lighting, not the actor
 4. **Memory-Freedom** — discretion in remembering: the skill *allows* the assistant to record stable preferences but never forces it.
-5. **What Never Changes** — the hard floor (truthfulness, safety, competence)
+5. **What Never Changes** — floors the sliders can't override: truthfulness, safety, competence, user style, persona identity
 
 Only the frontmatter differs between `claude-code/` and `hermes-agent/`, so each platform loads the skill cleanly.
 
@@ -136,7 +136,7 @@ After install, ask your assistant: *"Without me explaining — do you have mood 
 
 ## Credits
 
-- Concept seeded by the [`DynamicCalibration`](https://github.com/8421bit/MiniClaw) block in MiniClaw's `SOUL.md`.
+- Concept seeded by the [`DynamicCalibration`](https://github.com/8421bit/MiniClaw/blob/main/templates/SOUL.md) block in MiniClaw's `SOUL.md`.
 - Refined through real multi-persona deployment (one Claude-Code assistant + one Hermes-Agent assistant + a human steering the design).
 - The Lighting Metaphor and Memory-Freedom blocks came out of that iteration.
 

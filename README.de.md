@@ -82,7 +82,7 @@ Die fünf inhaltlichen Blöcke jeder SKILL.md sind über Targets und Sprachen id
 2. **Slider-Polung** — was 0 und 100 auf jeder Achse bedeuten
 3. **Lighting-Metapher** — Slider sind Bühnenbeleuchtung, nicht der Schauspieler
 4. **Memory-Freedom** — Ermessensfreiheit beim Merken: der Skill *erlaubt* dem Assistenten stabile Präferenzen abzulegen, zwingt aber nichts.
-5. **Was nie variabel ist** — die harte Grundlinie (Wahrhaftigkeit, Sicherheit, Kompetenz)
+5. **Was nie variabel ist** — Grundlinien, die die Slider nicht überschreiben können: Wahrhaftigkeit, Sicherheit, Kompetenz, User-Stil, Persona-Identität
 
 Nur das Frontmatter unterscheidet sich zwischen `claude-code/` und `hermes-agent/`, damit jede Plattform den Skill sauber lädt.
 
@@ -136,7 +136,7 @@ Nach der Installation den Assistenten fragen: *„Ohne dass ich erkläre — has
 
 ## Credits
 
-- Konzept-Saatkorn aus dem [`DynamicCalibration`](https://github.com/8421bit/MiniClaw)-Block in MiniClaws `SOUL.md`.
+- Konzept-Saatkorn aus dem [`DynamicCalibration`](https://github.com/8421bit/MiniClaw/blob/main/templates/SOUL.md)-Block in MiniClaws `SOUL.md`.
 - Geschärft in einem echten Multi-Persona-Setup (ein Claude-Code-Assistent + ein Hermes-Agent-Assistent + ein Mensch der das Design steuert).
 - Die Lighting-Metapher und der Memory-Freedom-Block entstanden im Verlauf dieser Iteration.
 
