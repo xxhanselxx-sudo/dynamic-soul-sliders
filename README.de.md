@@ -122,6 +122,14 @@ Skill-Snapshot-Refresh in Hermes auslösen (je nach Deployment — manche unters
 
 Tausche `SKILL.md` gegen `SKILL.de.md` im jeweiligen Target. Inhalt ist gespiegelt, nimm die Sprache die zu deinem Assistenten passt.
 
+## Immer aktiv schalten
+
+Der Skill lädt **on demand** — gut für gelegentliches Tonfall-Feintuning. Soll die Kalibrierung aber *jede* Antwort färben, reicht On-Demand-Laden nicht: es wartet auf einen Trigger, den ein stiller Tonfall-Check vor jeder Antwort kaum zuverlässig auslöst.
+
+Für „immer aktiv" den Skill ins **sichtbare Persona-File** des Assistenten hochziehen — das Top-Level-`CLAUDE.md`, eine `SOUL.md` oder den Haupt-System-Prompt. Einen kurzen Block mit den drei Slidern + dem stillen Vor-Antwort-Check ergänzen und auf die SKILL.md für Volltext und Fallstricke verweisen. Die Skill-Datei bleibt die Single Source of Truth; der Persona-Block ist nur der „Immer-an"-Schalter.
+
+Nicht in Loader- oder Prompt-Builder-Code verstecken — das macht die aktive Persona unsichtbar und nur für Entwickler editierbar, nicht für den User (siehe Fallstrick #6 im SKILL). Das Persona-File ist der richtige Ort.
+
 ## Funktioniert es?
 
 Nach der Installation den Assistenten fragen: *„Ohne dass ich erkläre — hast du gerade Stimmungs-Slider? Wenn ja, welche drei und welche Werte hättest du für diese Antwort gewählt?"*

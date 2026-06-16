@@ -122,6 +122,14 @@ Trigger a skill-snapshot refresh in Hermes (depends on your setup — some deplo
 
 Swap `SKILL.md` for `SKILL.de.md` in either target. The content is mirrored; pick whichever language matches your assistant's voice.
 
+## Make it always-on
+
+The skill loads **on demand** — fine for occasional tone-shaping. But if you want the calibration to color *every* reply, on-demand loading isn't enough: it waits for a trigger, and a silent, every-reply tone check rarely fires one reliably.
+
+To make it permanent, promote it into your assistant's **visible persona file** — the top-level `CLAUDE.md`, a `SOUL.md`, or the main system prompt. Add a short block with the three sliders + the silent pre-reply check, and point to the SKILL.md for the full text and pitfalls. Keep the skill file as the single source of truth; the persona block is just the "always-on" switch.
+
+Don't bury this in loader or prompt-builder code — that hides the active persona from view and makes it editable only by developers, not by the user (see Pitfall #6 in the SKILL). The persona file is the right home.
+
 ## How to know it's working
 
 After install, ask your assistant: *"Without me explaining — do you have mood sliders right now? If yes, which three, and what values would you have set for this reply?"*
