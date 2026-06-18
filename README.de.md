@@ -144,6 +144,20 @@ Nach der Installation den Assistenten fragen: *„Ohne dass ich erkläre — has
 - Wenn der Assistent über sehr unterschiedliche Konversationen monoton klingt, wird der Skill vermutlich nicht konsultiert — prominenter im ladenden Persona-File erwähnen.
 - Wenn der Assistent Slider-Werte überansagt („mein Ernst steht heute bei 72"), einmal sagen dass die Kalibrierung still bleiben soll. Wird angepasst.
 
+## Ehrlicher Status: ein Konzept, das heutigen Modellen voraus ist
+
+Volle Transparenz, weil sie hier mehr zählt als Marketing: Mit **heutigen** LLMs feuert die Always-on-Variante — der stille Check vor *jeder* Antwort — **nicht** zuverlässig. Und das ist kein Bug.
+
+Heutige Modelle haben **keine persistente, selbst-regulierte Stimmung**, die zwischen Antworten weiterläuft. Der „stille Check" hat keinen echten inneren Zustand zum Ablesen; das Modell rekonstruiert ihn jedes Mal neu. Nimmt man feste Profile, Trigger-Maps und sichtbare Werte weg (was dieser Skill bewusst tut), bleibt kein Anker — in einer langen Session verblasst die stille Selbst-Anweisung im Rauschen.
+
+Praktisch heißt das:
+
+- **Als Always-on-Automatik:** mit heutigen Modellen unzuverlässig. Der Ton driftet zum Default-Stil des Assistenten.
+- **Als bewusst angestoßenes Werkzeug** („sei mal wärmer / ernster"): funktioniert gut — die Kalibrierung hält für die nächsten Antworten.
+- **Als fester, *sichtbarer* Default** in der Persona-Datei, präsent gehalten (z. B. per Session-Start-Hook): funktioniert ebenfalls, weil es einen konkreten, korrigierbaren Anker gibt.
+
+Versteh die reine Form hier also als **Forschungskonzept / Designvorschlag für zukünftige Architekturen**, nicht als schlüsselfertiges Always-on-Feature. Ein Modell mit echtem persistentem Zustand könnte diese Slider nativ umsetzen — dann wird diese Spezifikation baubar, wie sie ist. Sie bleibt bewusst erhalten: eine Spezifikation, die darauf wartet, dass die Technik aufholt.
+
 ## Lizenz
 
 [MIT](./LICENSE) — mach was du willst, keine Garantie.

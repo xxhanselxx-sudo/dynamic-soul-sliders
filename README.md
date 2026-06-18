@@ -144,6 +144,20 @@ After install, ask your assistant: *"Without me explaining — do you have mood 
 - If the assistant sounds monotone across very different conversations, the skill probably isn't being consulted — make it more prominent in the persona file that loads it.
 - If the assistant over-announces slider values ("today my seriousness is 72"), tell it once to keep the calibration silent. It will adjust.
 
+## Honest status: a concept ahead of today's models
+
+Full transparency, because it matters more than marketing here: with **today's** LLMs, the always-on variant — the silent check before *every* reply — does **not** fire reliably. And that's not a bug.
+
+Today's models have **no persistent, self-regulated mood** that carries between replies. The "silent check" has no real inner state to read; the model reconstructs it from scratch each time. Strip away fixed profiles, trigger maps, and visible values (as this skill deliberately does), and there's no anchor left — over a long session the silent self-instruction fades into the noise.
+
+In practice:
+
+- **As an always-on automatic layer:** unreliable on today's models. The tone drifts back to the assistant's default style.
+- **As a deliberately-invoked tool** ("be warmer / more serious for a bit"): works well — the calibration holds for the next stretch of replies.
+- **As a fixed, *visible* default** anchored in the persona file and kept present (e.g. via a session-start hook): also works, because there's a concrete anchor you can see and correct.
+
+So treat the pure form here as a **research concept / design proposal for future architectures**, not a turnkey always-on feature. A model with genuine persistent state could implement these sliders natively — at which point this spec becomes buildable as written. It's kept intact on purpose: a specification waiting for the hardware to catch up.
+
 ## License
 
 [MIT](./LICENSE) — do whatever you want, no warranty.
